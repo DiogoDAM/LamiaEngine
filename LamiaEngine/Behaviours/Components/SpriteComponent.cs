@@ -42,6 +42,14 @@ namespace LamiaEngine
 			return this;
 		}
 
+		public SpriteComponent LoadTexture(Texture2D texture)
+		{
+			if(texture == null) throw new ArgumentNullException("ERROR! texture in SpriteComponent is null");
+			Sprite.LoadTexture(texture);
+
+			return this;
+		}
+
 		public SpriteComponent SetBounds(int x, int y, int w, int h)
 		{
 			Sprite.SetBounds(x, y, w, h);

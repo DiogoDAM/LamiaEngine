@@ -32,6 +32,16 @@ namespace LamiaEngine
 			Height = h;
 		}
 
+		public void LoadTexture(Texture2D texture)
+		{
+			if(texture == null) throw new ArgumentNullException("ERROR! texture in SpriteComponent is null");
+			Texture = texture;
+			X = 0;
+			Y = 0;
+			Width = texture.Width;
+			Height = texture.Height;
+		}
+
 		public void SetBounds(int x, int y, int w, int h)
 		{
 			X = x;

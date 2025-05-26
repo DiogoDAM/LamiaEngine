@@ -75,7 +75,7 @@ namespace LamiaEngine
 			c.Entity = this;
 		}
 
-		public T AddComponent<T>() where T : Component, new()
+		public T RegisterComponent<T>() where T : Component, new()
 		{
 			T component = new T();
 

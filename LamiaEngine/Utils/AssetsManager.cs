@@ -29,44 +29,79 @@ namespace LamiaEngine
 
 		//Load Assets Synchronous
 
-		public void LoadTexture(string path)
+		public void LoadTexture(string path, string name="")
 		{
 			if(string.IsNullOrEmpty(path)) throw new ArgumentNullException("AssetsManager.LoadTexture() path is null or emtpy");
 			if(_textures.ContainsKey(path)) return;
 
-			_textures.Add(path, _content.Load<Texture2D>(path));
+			if(string.IsNullOrEmpty(name))
+			{
+				_textures.Add(path, _content.Load<Texture2D>(path));
+			}
+			else
+			{
+				_textures.Add(name, _content.Load<Texture2D>(path));
+			}
 		}
 
-		public void LoadSound(string path)
+		public void LoadSound(string path, string name="")
 		{
 			if(string.IsNullOrEmpty(path)) throw new ArgumentNullException("AssetsManager.LoadSound() path is null or emtpy");
 			if(_sounds.ContainsKey(path)) return;
 
-			_sounds.Add(path, _content.Load<SoundEffect>(path));
+			if(string.IsNullOrEmpty(name))
+			{
+				_sounds.Add(path, _content.Load<SoundEffect>(path));
+			}
+			else
+			{
+				_sounds.Add(name, _content.Load<SoundEffect>(path));
+			}
 		}
 
-		public void LoadFont(string path, int fontSize)
+		public void LoadFont(string path, int fontSize, string name="")
 		{
 			if(string.IsNullOrEmpty(path)) throw new ArgumentNullException("AssetsManager.LoadFont() path is null or emtpy");
 			if(_sounds.ContainsKey(path)) return;
 
-			_fonts.Add(path, new Font(_content.Load<SpriteFont>(path), fontSize));
+			if(string.IsNullOrEmpty(name))
+			{
+				_fonts.Add(path, new Font(_content.Load<SpriteFont>(path), fontSize));
+			}
+			else
+			{
+				_fonts.Add(name, new Font(_content.Load<SpriteFont>(path), fontSize));
+			}
 		}
 
-		public void LoadSong(string path)
+		public void LoadSong(string path, string name="")
 		{
 			if(string.IsNullOrEmpty(path)) throw new ArgumentNullException("AssetsManager.LoadSong() path is null or emtpy");
 			if(_songs.ContainsKey(path)) return;
 
-			_songs.Add(path, _content.Load<Song>(path));
+			if(string.IsNullOrEmpty(name))
+			{
+				_songs.Add(path, _content.Load<Song>(path));
+			}
+			else
+			{
+				_songs.Add(name, _content.Load<Song>(path));
+			}
 		}
 
-		public void LoadEffect(string path)
+		public void LoadEffect(string path, string name="")
 		{
 			if(string.IsNullOrEmpty(path)) throw new ArgumentNullException("AssetsManager.LoadEffect() path is null or emtpy");
 			if(_effects.ContainsKey(path)) return;
 
-			_effects.Add(path, _content.Load<Effect>(path));
+			if(string.IsNullOrEmpty(name))
+			{
+				_effects.Add(path, _content.Load<Effect>(path));
+			}
+			else
+			{
+				_effects.Add(name, _content.Load<Effect>(path));
+			}
 		}
 
 		//Get Assets
